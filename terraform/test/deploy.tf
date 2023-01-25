@@ -2,7 +2,7 @@ resource "kubernetes_deployment" "deploymentnginx-1" {
   metadata {
     name = "deploymentnginx-1"
     labels = {
-      App = "nginx"
+      App = "nginx1"
     }
   }
 
@@ -10,13 +10,13 @@ resource "kubernetes_deployment" "deploymentnginx-1" {
     replicas = 1
     selector {
       match_labels = {
-        App = "nginx"
+        App = "nginx1"
       }
     }
     template {
       metadata {
         labels = {
-          App = "nginx"
+          App = "nginx1"
         }
       }
       spec {
