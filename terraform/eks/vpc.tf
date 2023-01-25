@@ -17,6 +17,7 @@ resource "aws_subnet" "main-subnet-1" {
 
   tags = {
     Name = "main-subnet-1"
+    kubernetes.io/role/elb = 1
   }
 }
 
@@ -28,5 +29,6 @@ resource "aws_subnet" "main-subnet-2" {
 
   tags = {
     Name = "main-subnet-2"
+    kubernetes.io/role/elb = 1
   }
 }

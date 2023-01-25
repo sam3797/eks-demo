@@ -59,8 +59,8 @@ resource "aws_iam_role" "worker-nodes-role" {
   role    = aws_iam_role.worker-nodes-role.name
  }
 
-  resource "aws_iam_role_policy_attachment" "EC2describesubnets" {
-  policy_arn = "arn:aws:iam::aws:policy/AmazonEC2ContainerServiceRole"
+  resource "aws_iam_role_policy_attachment" "EC2Fullaccess" {
+  policy_arn = "arn:aws:iam::aws:policy/AmazonEC2FullAccess"
   role    = aws_iam_role.worker-nodes-role.name
  }
  
