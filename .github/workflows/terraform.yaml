@@ -52,18 +52,12 @@ jobs:
       - name: testing the connection
         #if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         run: |
-          pwd;
-          ls -la
-          cd ~
-          pwd
-          ls -la
           aws eks --region $AWS_DEFAULT_REGION update-kubeconfig --name my-eks-cluster
-          pwd
-          ls -la
-          cat .kube/config
-          echo ***********************************
           kubectl get nodes
           kubectl get deployments -A
+          kubectl get services -A
+          kubectl get pods -A
+          kubectl get ingress -A
 
   terraform-apply-eks:
     name: "Terraform-Apply-eks"
@@ -161,14 +155,7 @@ jobs:
       - name: testing the connection
         #if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         run: |
-          pwd;
-          cd ~
-          pwd;
-          ls -la
           aws eks --region $AWS_DEFAULT_REGION update-kubeconfig --name my-eks-cluster
-          pwd;
-          ls -la
-          cat .kube/config
 
       - name: Terraform Init
         id: init
@@ -180,14 +167,4 @@ jobs:
       - name: Terraform Apply
         #if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         run: terraform apply "tfplan-ingress"
-        working-directory: "./terraform/test"   
-
-      - name: testing the connection
-        #if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-        run: |
-          pwd;
-          cd ~
-          pwd;
-          ls -la
-          cat .kube/config
-      
+        working-directory: "./terraform/test" 
