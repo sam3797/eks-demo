@@ -1,6 +1,6 @@
-resource "kubernetes_deployment" "nginx" {
+resource "kubernetes_deployment" "deploymentnginx-1" {
   metadata {
-    name = "nginx"
+    name = "deploymentnginx-1"
     labels = {
       App = "nginx"
     }

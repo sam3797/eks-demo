@@ -55,9 +55,14 @@ jobs:
           pwd;
           ls -la
           cd ~
+          pwd
           ls -la
           aws eks --region $AWS_DEFAULT_REGION update-kubeconfig --name my-eks-cluster
-           kubectl get nodes
+          pwd
+          ls -la
+          cat .kube/config
+          echo ***********************************
+          kubectl get nodes
 
   terraform-apply-eks:
     name: "Terraform-Apply-eks"
