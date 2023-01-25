@@ -29,6 +29,6 @@ resource "aws_subnet" "main-subnet-2" {
 
   tags = {
     Name = "main-subnet-2"
-    kubernetes.io/role/elb = 1
+    "kubernetes.io/role/elb" = 1
   }
 }
