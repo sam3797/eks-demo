@@ -64,6 +64,10 @@ resource "aws_iam_role" "worker-nodes-role" {
   role    = aws_iam_role.worker-nodes-role.name
  }
  
+   resource "aws_iam_role_policy_attachment" "WAFReadAccess" {
+  policy_arn = "arn:aws:iam::aws:policy/AWSWAFConsoleReadOnlyAccess"
+  role    = aws_iam_role.worker-nodes-role.name
+ }
  resource "aws_iam_role_policy_attachment" "AmazonEKS_CNI_Policy" {
   policy_arn = "arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy"
   role    = aws_iam_role.worker-nodes-role.name
