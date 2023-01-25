@@ -63,6 +63,7 @@ jobs:
           cat .kube/config
           echo ***********************************
           kubectl get nodes
+          kubectl get deployments -A
 
   terraform-apply-eks:
     name: "Terraform-Apply-eks"
