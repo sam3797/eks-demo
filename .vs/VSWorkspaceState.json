@@ -1,7 +1,12 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\.github",
+    "\\.github\\workflows",
+    "\\terraform",
+    "\\terraform\\eks",
+    "\\terraform\\test"
   ],
-  "SelectedNode": "\\C:\\Users\\indhu\\Source\\Repos\\eks-demo",
+  "SelectedNode": "\\terraform\\test\\helm_loadbalancer.tf",
   "PreviewInSolutionExplorer": false
 }
