@@ -14,4 +14,5 @@ terraform {
   region = "us-east-1"
   bucket = "statefiles-terraform-github"
   key    = "ingresscontroller.tfstate"
+ }
 }
