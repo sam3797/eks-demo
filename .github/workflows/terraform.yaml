@@ -54,6 +54,8 @@ jobs:
         run: |
           pwd;
           ls -la
+          cd ~
+          ls -la
           aws eks --region $AWS_DEFAULT_REGION update-kubeconfig --name my-eks-cluster
            kubectl get nodes
 
@@ -143,11 +145,20 @@ jobs:
            name: terraform_plan_artifacts
            path: "./terraform/test"
 
-      - name: listing files
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{env.AWS_ACCESS_KEY_ID}}
+          aws-secret-access-key: ${{env.AWS_SECRET_ACCESS_KEY}}
+          aws-region: ${{env.AWS_DEFAULT_REGION}}
+
+      - name: testing the connection
+        #if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         run: |
-            ls -la
-            cd terraform/test
-            ls -la
+          pwd;
+          ls -la
+          cd ~
+          ls -la
 
       - name: Terraform Init
         id: init
