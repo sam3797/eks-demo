@@ -125,7 +125,7 @@ jobs:
       - name: Download the plan artifcats
         uses: actions/download-artifact@v2
         with:
-           name: terraform_plan_result
+           name: terraform_plan_artifacts
            path: "./terraform/test"
 
       - name: listing files
