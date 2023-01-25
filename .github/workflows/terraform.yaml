@@ -42,6 +42,12 @@ jobs:
           name:  terraform_plan_result #.zip will be added automatically
           path: ./terraform/eks/tfplan
       
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
 
       - name: testing the connection
         #if: github.ref == 'refs/heads/main' && github.event_name == 'push'
