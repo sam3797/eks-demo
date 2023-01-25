@@ -41,6 +41,15 @@ jobs:
         # Artifact name
           name:  terraform_plan_result #.zip will be added automatically
           path: ./terraform/eks/tfplan
+      
+
+      - name: testing the connection
+        #if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        run: |
+          pwd;
+          ls -la
+          aws eks --region us-east-1 update-kubeconfig --name my-eks-cluster
+           kubectl get nodes
 
   terraform-apply-eks:
     name: "Terraform-Apply-eks"
@@ -145,3 +154,4 @@ jobs:
         #if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         run: terraform apply "tfplan-ingress"
         working-directory: "./terraform/test"   
+      
