@@ -63,12 +63,6 @@ jobs:
            name: terraform_plan_result
            path: "./terraform/eks"
 
-      - name: listing files
-        run: |
-            ls -la
-            cd terraform/eks
-            ls -la
-
       - name: Terraform Init
         id: init
         run: |
