@@ -168,7 +168,7 @@ jobs:
           aws eks --region $AWS_DEFAULT_REGION update-kubeconfig --name my-eks-cluster
           pwd;
           ls -la
-          cat ./kube/config
+          cat .kube/config
 
       - name: Terraform Init
         id: init
@@ -189,5 +189,5 @@ jobs:
           cd ~
           pwd;
           ls -la
-          cat ./kube/config
+          cat .kube/config
       
