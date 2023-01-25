@@ -7,7 +7,7 @@ on:
 env:
   AWS_ACCESS_KEY_ID: ${{ vars.AWS_ACCESS_KEY_ID }}
   AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-  AWS_DEFAULT_REGION: us-east-1
+  AWS_DEFAULT_REGION: "us-east-1"
 
 jobs:
 
@@ -54,7 +54,7 @@ jobs:
         run: |
           pwd;
           ls -la
-          aws eks --region us-east-1 update-kubeconfig --name my-eks-cluster
+          aws eks --region ${AWS_DEFAULT_REGION} update-kubeconfig --name my-eks-cluster
            kubectl get nodes
 
   terraform-apply-eks:
