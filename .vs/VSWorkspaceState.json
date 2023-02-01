@@ -7,6 +7,6 @@
     "\\terraform\\eks",
     "\\terraform\\test"
   ],
-  "SelectedNode": "\\terraform\\eks\\eks.tf",
+  "SelectedNode": "\\.github\\workflows\\destory.yaml",
   "PreviewInSolutionExplorer": false
 }

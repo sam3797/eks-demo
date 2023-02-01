@@ -11,7 +11,7 @@ kubernetes = {
   }
   backend "s3" {
   region = "us-east-1"
-  bucket = "statefiles-terraform-github"
+  bucket = "github-statefile-terraform"
   key    = "eks.tfstate"
   }
 }
